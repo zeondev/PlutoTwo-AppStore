@@ -1,19 +1,21 @@
-export default {
+
+
+import Ws from "../../libs/windowSystem.js";
+
+let wrapper; // Lib.html | undefined
+let MyWindow;
+
+const pkg = {
   name: "thats-the.name",
-  description: "a simple static website hosting platform.",
-  ver: 1.5,
-  type: "process",
-  exec: async function (Root) {
-    let wrapper; // Lib.html | undefined
-    let MyWindow;
+  type: "app",
+  privs: 0,
+  start: async function (Root) {
+    
+    // Testing
+    console.log("Hello from example app", Root);
 
-    console.log("Hello from example package", Root.Lib);
-
-    Root.Lib.setOnEnd((_) => MyWindow.close());
-
-    const Win = (await Root.Lib.loadLibrary("WindowSystem")).win;
-
-    MyWindow = new Win({
+    // Create a window
+    MyWindow = new Ws.data.win({
       title: "thats-the.name",
       content: '<iframe src="https://thats-the.name/login.html"></iframe>',
       pid: Root.PID,
@@ -24,11 +26,15 @@ export default {
       },
     });
 
+    // Get the window body
     wrapper = MyWindow.window.querySelector(".win-content");
     wrapper.style.padding = "0px";
 
-    return Root.Lib.setupReturns((m) => {
-      /* This app has no message functionality... */
-    });
+  },
+  end: async function () {
+    // Close the window when the process is exited
+    MyWindow.close();
   },
 };
+
+export default pkg;
