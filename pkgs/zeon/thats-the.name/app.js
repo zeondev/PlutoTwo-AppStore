@@ -1,6 +1,6 @@
 
 
-import Ws from "../../libs/windowSystem.js";
+import Ws from "./libs/windowSystem.js";
 
 let wrapper; // Lib.html | undefined
 let MyWindow;
