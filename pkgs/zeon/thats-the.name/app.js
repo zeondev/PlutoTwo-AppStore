@@ -22,7 +22,7 @@ const pkg = {
       width: 800,
       height: 600,
       onclose: () => {
-        Root.Lib.onEnd();
+        Root.End();
       },
     });
 
