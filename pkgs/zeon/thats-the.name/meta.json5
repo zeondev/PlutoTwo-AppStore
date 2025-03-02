@@ -12,7 +12,7 @@
   // "Entertainment", "Work", "Play"
   category: "Work",
   // The minimum core version your app is compatible with.
-  compatibleWith: 1.6,
+  compatibleWith: 2.0,
   // App assets (shown in the app store)
   assets: {
     path: "app.js",
@@ -24,7 +24,7 @@
     {
       ver: "1.0.0",
       cmp: 1.0,
-      date: "2023-02-18T22:15:53.000Z",
+      date: "2024-03-01T22:15:53.000Z",
     },
   ],
   // A long description (text only) of the details of the latest update.
